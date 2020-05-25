@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import comm.example.demo.exception.EmployeeNotFoundException;
 import comm.example.demo.factory.EmployeeFactory;
 import comm.example.demo.model.Employee;
 
@@ -53,6 +54,25 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 		
 		return employee;
+	}
+	@Override
+	public void deleteEmployee(String employeeID) {
+		try {
+				PreparedStatement preparedStatement=connection.prepareStatement("delete from employees where id=?");
+				preparedStatement.setString(1, employeeID);
+				int item=preparedStatement.executeUpdate();
+				if(item==0)
+				{
+					throw new EmployeeNotFoundException("No Such Employee with the given id: "+employeeID);
+					
+				}
+				System.out.println("employee deleted sucessfully..");
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	
+		
 	}
 
 }

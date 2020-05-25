@@ -24,8 +24,9 @@ public class App {
 		do {
 			System.out.println("1. Create Employee:");
 			System.out.println("2. List All Employees:");
+			System.out.println("3. Remove Employee:");
 			System.out.println("0. Exit from the system: ");
-			System.out.print("chose your option(1/2/0): ");
+			System.out.print("chose your option(1/2/3/0): ");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 1:
@@ -45,6 +46,12 @@ public class App {
 					System.out.println(e.getDetails());
 				}
 				break;
+			case 3:
+				System.out.print("provide employee id: ");
+				String eID = scanner.next();
+				app.service.deleteEmployee(eID);
+				break;
+			
 			case 0:
 				System.out.println("bye!");
 				System.exit(0);
