@@ -19,6 +19,16 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private String email;
+	public Employee(String employeeID, String firstName, String lastName, String email) {
+		super();
+		this.employeeID = employeeID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
 	
-	
+	public String getDetails()
+	{
+		return "id: "+employeeID+" first_name: "+firstName+" last_name: "+lastName+" email:"+email;
+	}
 }

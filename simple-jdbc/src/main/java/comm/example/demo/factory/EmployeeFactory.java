@@ -16,9 +16,9 @@ public class EmployeeFactory {
 		DriverManager.registerDriver(new Driver());
 		//step-2 create connection with java and backend sql
 		connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","fsd","Root@1234");
-		System.out.println(connection);
+		//sSystem.out.println(connection);
 	}
-	
+	// Single tone pattern
 	public static EmployeeFactory getMySqlConnection() throws SQLException
 	{
 		
@@ -27,6 +27,11 @@ public class EmployeeFactory {
 			factory=new EmployeeFactory();
 		}
 		return factory;
+	}
+	
+	public Connection getConnection()
+	{
+		return connection;
 	}
 
 }

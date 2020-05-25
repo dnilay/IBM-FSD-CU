@@ -1,20 +1,35 @@
 package comm.example.demo;
 
 import java.sql.SQLException;
+import java.util.List;
 
+import comm.example.demo.dao.EmployeeDAO;
+import comm.example.demo.dao.EmployeeDAOImpl;
 import comm.example.demo.factory.EmployeeFactory;
+import comm.example.demo.model.Employee;
 
 public class App 
 {
     
-	private EmployeeFactory factory;
+	private EmployeeDAO dao;
 	
+
+	
+
 	public App() throws SQLException {
-		factory=EmployeeFactory.getMySqlConnection();
+		dao=new EmployeeDAOImpl();
 	}
+
+
+
 
 	public static void main( String[] args ) throws SQLException
     {
-        System.out.println(new App().factory);
+       App app=new App();
+		List<Employee> list=app.dao.getAllEmployees();
+		for(Employee e:list)
+		{
+			System.out.println(e.getDetails());
+		}
     }
 }
