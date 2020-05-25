@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import comm.example.demo.exception.EmployeeNotFoundException;
 import comm.example.demo.factory.EmployeeFactory;
@@ -16,6 +17,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	private EmployeeFactory factory;
 	private Connection connection;
 	private List<Employee> employees;
+	private static Scanner scanner=new Scanner(System.in);
 	public EmployeeDAOImpl() throws SQLException {
 		factory=EmployeeFactory.getMySqlConnection();
 		connection=factory.getConnection();
@@ -73,6 +75,49 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 	
 		
+	}
+	@Override
+	public Employee updateEmployee(String employeeId) {
+		Employee employee=null;
+		try {
+			
+			  PreparedStatement
+			  preparedStatement=connection.prepareStatement("select * from employees where id=?");
+			  preparedStatement.setString(1, employeeId); 
+			  ResultSet rs=preparedStatement.executeQuery(); 
+			  int item=0;
+			  while(rs.next())
+			  {
+				  item++;
+			  }
+			  if(item<=0) { throw new
+			  EmployeeNotFoundException("No Such Employee with the given id: "+employeeId);
+			  
+			  }
+			 
+			System.out.print("First Name:");
+			String fName = scanner.next();
+			System.out.print("Last Name :");
+			String lName = scanner.next();
+			System.out.print("Email: ");
+			String email = scanner.next();
+		//	employee=new Employee(employeeId, fName, lName, email);
+		preparedStatement=connection.prepareStatement("update employees set first_name=?,last_name=?,email=? where id=?");
+			preparedStatement.setString(1, fName);
+			preparedStatement.setString(2, lName);
+			preparedStatement.setString(3, email);
+			preparedStatement.setString(4, employeeId);
+			preparedStatement.executeUpdate();
+		} 
+		catch (EmployeeNotFoundException enf) {
+			// TODO: handle exception
+			System.out.println(enf.getMessage());
+		}
+		catch (SQLException se) {
+			se.getMessage();
+		}
+		
+		return employee;
 	}
 
 }

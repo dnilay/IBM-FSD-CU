@@ -9,6 +9,7 @@ public List<Employee> getAllEmployees();
 	
 	public Employee createEmployee(Employee employee);
 	public void deleteEmployee(String employeeID);
+	public Employee updateEmployee(String employeeId);
 	
 
 }
