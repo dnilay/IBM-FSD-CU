@@ -54,5 +54,26 @@ public class CustomerDAOImpl implements CustomerDAO {
 		}
 				return customer ;
 	}
+
+	@Override
+	public void removeCustomer(int id) {
+		Customer customer=null;
+		try {
+			customer=session.get(Customer.class, id);
+			if(customer==null)
+			{
+				throw new CustomerNotFoundException("customer not found with id: "+id);
+			}
+
+		} catch (CustomerNotFoundException e) {
+		
+			System.out.println(e.getMessage());
+		}
+		session.getTransaction().begin();
+		session.remove(customer);
+		session.getTransaction().commit();
+		System.out.println("customer removed sucessfully.");
+		
+	}
 }
 

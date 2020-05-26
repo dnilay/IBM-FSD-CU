@@ -23,6 +23,7 @@ static
         		System.out.println("1.create customer.");
             	System.out.println("2.display all customer.");
             	System.out.println("3.find a customer.");
+            	System.out.println("4.remove a customer.");
             	System.out.println("0.exit.");
             	System.out.print("1.chose your choice: ");
             	choice=scanner.nextInt();
@@ -62,7 +63,11 @@ static
     				}
     				
     				break;
-
+    			case 4:
+    				System.out.print("id: ");
+    				int id1=scanner.nextInt();
+    				App.service.removeCustomer(id1);
+    				break;
     			default:
     				break;
     			}
