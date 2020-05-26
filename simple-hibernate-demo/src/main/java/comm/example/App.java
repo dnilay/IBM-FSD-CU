@@ -24,8 +24,9 @@ static
             	System.out.println("2.display all customer.");
             	System.out.println("3.find a customer.");
             	System.out.println("4.remove a customer.");
+            	System.out.println("5. update employee");
             	System.out.println("0.exit.");
-            	System.out.print("1.chose your choice: ");
+            	System.out.print(".chose your choice: ");
             	choice=scanner.nextInt();
             	switch (choice) {
     			case 1:
@@ -67,6 +68,16 @@ static
     				System.out.print("id: ");
     				int id1=scanner.nextInt();
     				App.service.removeCustomer(id1);
+    				break;
+    			case 5:
+    				System.out.print("id: ");
+    				int id3=scanner.nextInt();
+    				Customer c=App.service.updateCustomer(id3);
+    				System.out.println(c);
+    				break;
+    			case 0:
+    				System.out.println("bye");
+    				System.exit(0);
     				break;
     			default:
     				break;

@@ -1,6 +1,7 @@
 package comm.example.dao;
 
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -14,6 +15,7 @@ import comm.example.entity.Customer;
 
 public class CustomerDAOImpl implements CustomerDAO {
 	private SessionFactory factory;
+	private static Scanner scanner=new Scanner(System.in);
 	private Session session;
 
 	{
@@ -74,6 +76,39 @@ public class CustomerDAOImpl implements CustomerDAO {
 		session.getTransaction().commit();
 		System.out.println("customer removed sucessfully.");
 		
+	}
+
+	@Override
+	public Customer updateCustomer(int id) {
+		// TODO Auto-generated method stub
+		Customer customer=null;
+		try {
+			customer=session.get(Customer.class, id);
+			if(customer==null)
+			{
+				throw new CustomerNotFoundException("customer not found with id: "+id);
+			}
+
+		} catch (CustomerNotFoundException e) {
+		
+			System.out.println(e.getMessage());
+		}
+		System.out.print("first name: ");
+		String fName=scanner.next();
+		System.out.print("last name: ");
+		String lName=scanner.next();
+		System.out.print("email: ");
+		String email=scanner.next();
+		System.out.print("amount: ");
+		int amount=scanner.nextInt();
+		customer.setFirstName(fName);
+		customer.setLastName(lName);
+		customer.setEmail(email);
+		customer.setAmount(amount);
+		session.getTransaction().begin();
+		session.update(customer);
+		session.getTransaction().commit();
+		return customer;
 	}
 }
 
