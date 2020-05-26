@@ -2,6 +2,8 @@ package comm.example.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -29,8 +31,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public List<Customer> getAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+	Query query=session.createQuery("from Customer",Customer.class);
+	
+		return query.getResultList();
 	}
 
 }

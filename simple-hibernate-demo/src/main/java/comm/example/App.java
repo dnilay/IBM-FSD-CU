@@ -1,5 +1,6 @@
 package comm.example;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.hibernate.Session;
@@ -39,6 +40,13 @@ public class App
 				String email=scanner.next();
 				Customer customer=app.service.createCustoemr(new Customer(fName, lName, email));
 				System.out.println(customer);
+				break;
+			case 2:
+				List<Customer> customers=app.service.getAllCustomers();
+				for(Customer c:customers)
+				{
+					System.out.println(c);
+				}
 				break;
 
 			default:
