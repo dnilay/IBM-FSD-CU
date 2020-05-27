@@ -31,4 +31,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return query.getResultList();
 	}
 
+	@Override
+	public Employee raiseSalary(int id, double salary) {
+		// TODO Auto-generated method stub
+		Employee employee=entityManager.find(Employee.class, id);
+		if(employee!=null)
+		{
+			entityManager.getTransaction().begin();
+			employee.setSalary(employee.getSalary()+salary);
+			//entity manager merge method is replacing update methode.
+			entityManager.merge(employee);
+			entityManager.getTransaction().commit();
+		}
+		return employee;
+	}
+
 }
