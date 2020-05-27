@@ -26,6 +26,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return dao.raiseSalary(id, salary);
 	}
+	@Override
+	public void deleteEmployee(int id) {
+		dao.deleteEmployee(id);
+		
+	}
 
 	
 

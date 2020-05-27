@@ -46,4 +46,28 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return employee;
 	}
 
+	@Override
+	public void deleteEmployee(int id) {
+
+		//find by id
+		// if the entity is found we shall remove
+		// else print a message saying entity not found
+		Employee employee=entityManager.find(Employee.class, id);
+		if(employee==null)
+		{
+			
+			System.out.println("no such entity found with id: "+id);
+			System.exit(0);
+		}
+		else
+		{
+			entityManager.getTransaction().begin();
+			entityManager.remove(employee);
+			entityManager.getTransaction().commit();
+			System.out.println("employee removed sucessfully");
+		}
+		
+		
+	}
+
 }

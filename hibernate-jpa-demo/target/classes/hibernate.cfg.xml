@@ -7,7 +7,7 @@
   <property name="hibernate.connection.url">jdbc:h2:~/testdb</property>
   <property name="hibernate.connection.username">sa</property>
   <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
-  <property name="hibernate.show_sql">true</property>
-  <property name="hibernate.format_sql">true</property>
+<!--   <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.format_sql">true</property> -->
  </session-factory>
 </hibernate-configuration>

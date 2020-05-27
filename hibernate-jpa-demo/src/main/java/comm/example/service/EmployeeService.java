@@ -10,5 +10,7 @@ public interface EmployeeService {
 	public List<Employee> getAllEmployees();
 	public Employee createEmployee(Employee employee);
 	public Employee raiseSalary(int id,double salary);
+	public void deleteEmployee(int id);
+
 
 }
