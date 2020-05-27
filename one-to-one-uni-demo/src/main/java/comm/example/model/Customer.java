@@ -22,23 +22,25 @@ import lombok.NoArgsConstructor;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
     private String name;
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "MY_ORDER")
+    @JoinColumn(name = "ORDER_ID_FK")
     private Order order;
-	public Customer(String name, Order order) {
-		super();
-		this.name = name;
-		this.order = order;
-	}
+	
     
 public String getDetails()
 {
 	return "order placed sucessfully with the bellow details\n Customer ID:"+getId()+" Customrr NameL: "+getName()
 	+" Order Id: "+order.getId()+" Address:"+order.getAddress();
+}
+
+
+public Customer(String name) {
+	super();
+	this.name = name;
 }
   
 
