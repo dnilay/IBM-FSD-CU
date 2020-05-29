@@ -1,6 +1,5 @@
 package org.example.bean;
 
-public interface Coach {
-    public String getDailyWorkOut();
+public interface FortuneService {
     public String getDailyFortune();
 }

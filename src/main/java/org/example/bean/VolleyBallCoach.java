@@ -1,18 +1,20 @@
 package org.example.bean;
 
-public class CricketCoach implements Coach {
+public class VolleyBallCoach implements Coach {
     private FortuneService fortuneService;
     @Override
     public String getDailyWorkOut() {
-        return "practice spin bowling today";
-    }
-
-    public void setFortuneService(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
+        return "practice back-head today";
     }
 
     @Override
     public String getDailyFortune() {
         return fortuneService.getDailyFortune();
     }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+
 }

@@ -2,5 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean name="theCoach" class="org.example.bean.CricketCoach"/>
+<bean name="theCoach" class="org.example.bean.CricketCoach">
+    <property name="fortuneService" ref="fortuneService"/>
+
+</bean>
+    <bean name="fortuneService" class="org.example.bean.BadluckService"/>
 </beans>
