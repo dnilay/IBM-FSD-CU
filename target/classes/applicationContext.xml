@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean name="theProduct" class="org.example.bean.Product">
+    <constructor-arg name="productID" value="pro-1"/>
+    <constructor-arg name="productName" value="Computer"/>
+    <constructor-arg name="productPrice" value="10000"/>
+
+</bean>
+</beans>
