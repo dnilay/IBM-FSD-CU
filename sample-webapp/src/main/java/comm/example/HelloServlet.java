@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		out.println("<h3> hello world servlet</h3>");
-		out.println("welcome to the world of J2EE");
+		String name=request.getParameter("t1");
+		out.println("<h2>hello"+name+"</h2>");
 	}
 
 }
