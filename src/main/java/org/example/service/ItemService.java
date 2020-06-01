@@ -1,4 +1,6 @@
-package org.example;
+package org.example.service;
+
+import org.example.entity.Item;
 
 import java.sql.SQLException;
 

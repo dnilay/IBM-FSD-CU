@@ -1,4 +1,6 @@
-package org.example;
+package org.example.dao;
+
+import org.example.entity.Item;
 
 import java.sql.SQLException;
 

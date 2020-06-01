@@ -1,9 +1,11 @@
-package org.example;
+package org.example.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.example.entity.Item;
+import org.example.factory.ItemFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

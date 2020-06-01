@@ -1,7 +1,9 @@
-package org.example;
+package org.example.service;
 
 import java.sql.SQLException;
 
+import org.example.dao.ItemDAO;
+import org.example.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 @Component("itemService")
