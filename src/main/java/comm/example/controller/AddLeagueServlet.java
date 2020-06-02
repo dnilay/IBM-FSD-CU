@@ -56,7 +56,7 @@ public class AddLeagueServlet extends HttpServlet {
         if (!errors.isEmpty())
         {
             request.setAttribute("error",errors);
-            RequestDispatcher view=request.getRequestDispatcher("add_league.html");
+            RequestDispatcher view=request.getRequestDispatcher("add_league.view");
             view.forward(request,response);
         }
         else {
