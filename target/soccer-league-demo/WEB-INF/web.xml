@@ -4,6 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>leagues-file</param-name>
+    <param-value>/WEB-INF/data/leagues.txt</param-value>
+  </context-param>
   <servlet>
     <servlet-name>SuccessServlet</servlet-name>
     <servlet-class>comm.example.view.SuccessServlet</servlet-class>
