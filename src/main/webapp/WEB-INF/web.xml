@@ -5,10 +5,6 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>AddleagueServlet</servlet-name>
-    <servlet-class>comm.example.controller.AddLeagueServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>SuccessServlet</servlet-name>
     <servlet-class>comm.example.view.SuccessServlet</servlet-class>
   </servlet>
@@ -16,6 +12,22 @@
     <servlet-name>ErrorServlet</servlet-name>
     <servlet-class>comm.example.view.ErrorServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AddleagueServlet</servlet-name>
+    <servlet-class>comm.example.controller.AddLeagueServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddLeagueServletVersion2</servlet-name>
+    <servlet-class>comm.example.view.AddLeagueServletViewVersion2</servlet-class>
+    <init-param>
+      <param-name>season-list</param-name>
+      <param-value>Winter,Summer,Autumn,Spring</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddLeagueServletVersion2</servlet-name>
+    <url-pattern>/add_league_v2.view</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AddleagueServlet</servlet-name>
     <url-pattern>/add_league.do</url-pattern>
