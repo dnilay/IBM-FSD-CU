@@ -12,5 +12,6 @@
 </head>
 <body>
 <p>welcome to spring hello world.</p>
+<a href="hello/showForm">Show From</a>
 </body>
 </html>
