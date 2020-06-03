@@ -1,0 +1,49 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    <filter>
+        <filter-name>Filter1</filter-name>
+        <filter-class>comm.example.filter.Filter1</filter-class>
+        <init-param>
+            <param-name>a</param-name>
+            <param-value>10</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>Filter2</filter-name>
+        <filter-class>comm.example.filter.Filter2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter1</filter-name>
+        <servlet-name>MyServlet1</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filter2</filter-name>
+        <servlet-name>MyServlet1</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filter2</filter-name>
+        <servlet-name>MyServlet2</servlet-name>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>MyServlet1</servlet-name>
+        <servlet-class>comm.example.MyServlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyServlet2</servlet-name>
+        <servlet-class>comm.example.MyServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet1</servlet-name>
+        <url-pattern>/myservlet1.view</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/myservlet2.view</url-pattern>
+    </servlet-mapping>
+
+</web-app>
