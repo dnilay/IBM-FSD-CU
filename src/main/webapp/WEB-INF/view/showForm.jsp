@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="processForm" method="post">
+<form action="processForm3" method="post">
 <label>Your Name: </label><input type="text" name="uName"><br/>
     <input type="submit">
 </form>

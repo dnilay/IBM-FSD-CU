@@ -5,6 +5,8 @@
     <title>process form</title>
 </head>
 <body>
-Hello ${name}
+<%--Hello ${param.uName}--%>
+Hello:${name}<br/>
+<a href="${pageContext.request.contextPath}/">go to home</a>
 </body>
 </html>
