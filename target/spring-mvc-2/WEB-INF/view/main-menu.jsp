@@ -1,14 +1,30 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Title</title>
-</head>
-<body>
-<div class="container">
-    <p> home page for student</p>
-    <a href="student/showForm">student-form</a>
 
-</div>
+<body>
+
+<h2>Spring MVC Demo - Home Page</h2>
+
+<hr>
+
+<a href="hello/showForm">Hello World form</a>
+
+<br><br>
+
+<a href="student/showForm">Student form</a>
+
+<br><br>
+
+<a href="customer/showForm">Customer form</a>
+
+
 </body>
+
 </html>
+
+
+
+
+
+
+

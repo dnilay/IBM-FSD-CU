@@ -16,41 +16,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController {
 
-	// add an initbinder ... to convert trim input strings
-	// remove leading and trailing whitespace
-	// resolve issue for our validation
+    // add an initbinder ... to convert trim input strings
+    // remove leading and trailing whitespace
+    // resolve issue for our validation
 	
-	@InitBinder
+	/*@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-	}
-	
-	
-	@RequestMapping("/showForm")
-	public String showForm(Model theModel) {
-		
-		theModel.addAttribute("customer", new Customer());
-		
-		return "customer-form";
-	}
-	
-	@RequestMapping("/processForm")
-	public String processForm(
-			@Valid @ModelAttribute("customer") Customer theCustomer,
-			BindingResult theBindingResult) {
-		
-		System.out.println("Last name: |" + theCustomer.getLastName() + "|");
-		
-		if (theBindingResult.hasErrors()) {
-			return "customer-form";
-		}
-		else {
-			return "customer-confirmation";
-		}
-	}
+	}*/
+
+
+    @RequestMapping("/showForm")
+    public String showForm(Model theModel) {
+
+        theModel.addAttribute("customer", new Customer());
+
+        return "customer-form";
+    }
+
+    @RequestMapping("/processForm")
+    public String processForm(
+            @Valid @ModelAttribute("customer") Customer theCustomer,
+            BindingResult theBindingResult) {
+
+
+        if (theBindingResult.hasErrors()) {
+            return "customer-form";
+        } else {
+            return "customer-confirmation";
+        }
+    }
 }
 
 
