@@ -5,14 +5,19 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .error{color:red}
+    </style>
     <title>student form</title>
 </head>
 <body>
 <div class="input-group mb-3">
 
     <form:form action="processForm" modelAttribute="student" method="post">
-        First Name:<form:input path="firstName" cssClass="text"/><br/>
-        Last Name<form:input path="lastName" cssClass="text"/><br/>
+        First Name:<form:input path="firstName" cssClass="text"/>
+        <form:errors path="firstName" cssClass="error"/><br/>
+        Last Name<form:input path="lastName" cssClass="text"/>
+        <form:errors path="lastName" cssClass="error"/><br/>
         Email:<form:input path="email" cssClass="text"/><br/>
         Country:<form:select path="country">
         <form:options items="${student.map}"/>
