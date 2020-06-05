@@ -1,0 +1,7 @@
+server:
+  port: 4444
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
