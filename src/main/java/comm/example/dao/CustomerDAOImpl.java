@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository("customerDAO")
 public class CustomerDAOImpl implements CustomerDAO {
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public CustomerDAOImpl(EntityManager entityManager) {
@@ -23,5 +23,12 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<Customer> getCustomers() {
         Query query = entityManager.createQuery("from Customer");
         return query.getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void createCustomer(Customer customer) {
+        entityManager.persist(customer);
+
     }
 }

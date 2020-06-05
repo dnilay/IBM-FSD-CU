@@ -24,11 +24,12 @@
         <h2>CRM - Customer Relationship Manager</h2>
     </div>
 </div>
-
+    <input type="button" onclick="window.location.href='showFormForAdd'; return false"
+    class="add-button" value="Add New Customer">
+<br/><br/>
 <div id="container">
-
     <div id="content">
-        <table class="table table-dark">
+        <table class="table">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">First Name</th>
