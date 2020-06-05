@@ -1,0 +1,10 @@
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/view/
+  datasource:
+    url: jdbc:h2:~/testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
