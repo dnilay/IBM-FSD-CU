@@ -29,7 +29,7 @@
     <h3>Save Customer</h3>
 
     <form:form action="saveCustomer" modelAttribute="customer" method="POST">
-
+        <form:hidden path="id" />
         <div class="form-group">
             <label>First name:</label>
             <form:input path="firstName"/>
