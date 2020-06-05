@@ -35,14 +35,25 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Action</th>
             </tr>
 
             <c:forEach var="tempCustomer" items="${customers}">
-
+            <c:url var="updateLink" value="/customer/showFormForUpdate">
+                <c:param name="customerId" value="${tempCustomer.id}" />
+            </c:url>
+            <c:url var="deleteLink" value="/customer/delete">
+                <c:param name="customerId" value="${tempCustomer.id}" />
+            </c:url>
             <tr>
                 <td> ${tempCustomer.firstName} </td>
                 <td> ${tempCustomer.lastName} </td>
                 <td> ${tempCustomer.email} </td>
+                <td>
+                    <a href="${updateLink}">Update</a>
+                    <a href="${deleteLink}">Delete</a>
+                </td>
+
             </tr>
 
             </c:forEach>

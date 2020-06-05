@@ -11,6 +11,9 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     private CustomerDAO customerDAO;
 
+    public CustomerServiceImpl() {
+    }
+
     @Autowired
     public CustomerServiceImpl(CustomerDAO customerDAO) {
         this.customerDAO = customerDAO;
@@ -25,4 +28,17 @@ public class CustomerServiceImpl implements CustomerService {
     public void createCustomer(Customer customer) {
         customerDAO.createCustomer(customer);
     }
+
+    @Override
+    public Customer getCustomer(int customerId) {
+       return customerDAO.getCustomer(customerId);
+    }
+
+    @Override
+    public void deleteCustomer(int customerId) {
+        customerDAO.deleteCustomer(customerId);
+
+    }
+
+
 }
