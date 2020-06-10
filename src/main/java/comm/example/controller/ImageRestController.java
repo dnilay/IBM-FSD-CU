@@ -32,6 +32,23 @@ public class ImageRestController {
     public ResponseEntity<Image> createImage(@RequestBody Image image)
     {
 
-        return ResponseEntity.status(HttpStatus.OK).body(imageService.createImage(image));
+        return ResponseEntity.status(HttpStatus.OK).body(imageService.createAndUpdateImage(image));
+    }
+    @PutMapping("/images")
+    public ResponseEntity<Image> updateImage(@RequestBody Image image)
+    {
+        return ResponseEntity.status(HttpStatus.OK).body(imageService.createAndUpdateImage(image));
+    }
+    @DeleteMapping("/images")
+    public ResponseEntity<String> deleteImage(@RequestBody Image image)
+    {
+        imageService.deleteImage(image);
+        return ResponseEntity.status(HttpStatus.OK).body("deleted sucessfully");
+    }
+    @DeleteMapping("/images/{imageId}")
+    public ResponseEntity<String> deleteImageById(@PathVariable("imageId") int imageId)
+    {
+        imageService.deleteImageById(imageId);
+        return ResponseEntity.status(HttpStatus.OK).body("deleted sucessfully");
     }
 }

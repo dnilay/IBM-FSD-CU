@@ -4,8 +4,8 @@ import comm.example.dao.ImageRepository;
 import comm.example.model.Image;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -24,14 +24,29 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    @Transactional
+    @org.springframework.transaction.annotation.Transactional
     public Optional<Image> getImageById(int imageId) {
         return imageRepository.findById(imageId);
     }
 
     @Override
     @Transactional
-    public Image createImage(Image image) {
+    public Image createAndUpdateImage(Image image) {
         return imageRepository.save(image);
     }
+
+    @Override
+    @Transactional
+    public void deleteImage(Image image) {
+        imageRepository.delete(image);
+    }
+
+    @Override
+    @Transactional
+    public void deleteImageById(int imageId) {
+
+       imageRepository.deleteById(imageId);
+    }
+
+
 }
