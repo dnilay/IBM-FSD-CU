@@ -1,0 +1,9 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /h2
+server:
+  port: 8011
