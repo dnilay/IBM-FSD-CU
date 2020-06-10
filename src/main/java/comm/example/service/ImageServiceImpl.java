@@ -28,4 +28,10 @@ public class ImageServiceImpl implements ImageService {
     public Optional<Image> getImageById(int imageId) {
         return imageRepository.findById(imageId);
     }
+
+    @Override
+    @Transactional
+    public Image createImage(Image image) {
+        return imageRepository.save(image);
+    }
 }

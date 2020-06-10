@@ -1,5 +1,6 @@
 package comm.example.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class Image {
     @Column(name = "image_url")
     private String imageUrl;
     @Column(name = "active_status")
+    @JsonProperty
     private boolean isActive;
 
 
