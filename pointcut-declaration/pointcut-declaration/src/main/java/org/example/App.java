@@ -24,7 +24,7 @@ public class App
         Account myAccount = new Account();
         theAccountDAO.addAccount(myAccount, true);
         theAccountDAO.doWork();
-        theAccountDAO.testMe();
+
 
         // call the membership business method
         theMembershipDAO.addSillyMember();
