@@ -1,0 +1,4 @@
+comm/example/demo/App.class
+comm/example/demo/DemoConfig.class
+comm/example/demo/aspect/MyDemoLoggingAspect.class
+comm/example/demo/dao/AccountDAO.class
